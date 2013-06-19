@@ -18,7 +18,7 @@ end
 
 def line_switch(end_line)
     if end_line == "6"
-      then end_line = 's'
+      end_line = 's'
       puts "Are you getting off at  Grand Central, 33rd, 28th-s, 23rd-s, Union Square, or Astor Place?"
       ending_point = get_end end_line
     elsif end_line == 'n'
@@ -34,8 +34,12 @@ end
 puts "----Get on the Mainline!----"
 puts "What line are you starting from (N, L, 6)?"
 start_line = gets.chomp.downcase
+while start_line != "n" && start_line != "s" && start_line != "l"
+  puts "Please enter either N, L or 6."
+  start_line = gets.chomp.downcase
+end
 if start_line == "6"
-    then start_line = 's'
+    start_line = 's'
     puts "Are you starting at  Grand Central, 33rd, 28th-s, 23rd-s, Union Square, or Astor Place?"
     starting_point = get_start start_line
       puts "Which line are you getting off of (N, L, 6)?"
@@ -61,7 +65,7 @@ if start_line == end_line
 end
 
 if start_line != end_line
-    if start_line == 'n' || 's'
+    if start_line == ('n' || 's')
       union_square = 4
       first_journey = (starting_point - union_square).abs
       if end_line == 'l'
