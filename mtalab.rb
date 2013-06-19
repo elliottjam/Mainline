@@ -66,7 +66,7 @@ if start_line != end_line
       first_journey = (starting_point - union_square).abs
       if end_line == 'l'
         union_square = 2
-      elsif end_line == 's' || 'n'
+      else
         union_square = 4
       end
       second_journey = (ending_point - union_square).abs
